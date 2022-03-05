@@ -22,4 +22,4 @@ async function run() {
   console.log('done')
 }
 
-Cron('*/10 * * * * *', run)
+Cron('23 * * * *', run)

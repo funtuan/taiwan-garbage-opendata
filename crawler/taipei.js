@@ -11,7 +11,10 @@ function parseTimeText(text) {
 }
 
 module.exports = async () => {
-  const json = await downloadCSV('https://data.taipei/api/getDatasetInfo/downloadResource?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae&rid=60524c47-412c-41b4-ac8f-79d29a9deca7')
+  console.log('taipei running...')
+  const json = await downloadCSV('https://data.taipei/api/getDatasetInfo/downloadResource?id=6bb3304b-4f46-4bb0-8cd1-60c66dcd1cae&rid=60524c47-412c-41b4-ac8f-79d29a9deca7', {
+    format: 'big5',
+  })
 
   const data = json.reduce((row, one) => {
     for (const day of taipeiGeneralGarbageDay) {
@@ -22,12 +25,14 @@ module.exports = async () => {
         endTime: parseTimeText(one['離開時間']),
         lat: Number(one['緯度']),
         lon: Number(one['經度']),
+        garbage: true,
         recycle: taipeiRecycleGarbageDay.includes(day),
       })
     }
     return row
   }, [])
 
+  console.log('taipei done')
   return data
 }
 
