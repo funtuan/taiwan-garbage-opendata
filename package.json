@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "croner": "^4.2.3",
+    "fs": "0.0.1-security",
     "simple-git": "^3.2.6"
   }
 }
