@@ -11,6 +11,7 @@
   "dependencies": {
     "croner": "^4.2.3",
     "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.0",
     "fs": "0.0.1-security",
     "iconv-lite": "^0.6.3",
     "request": "^2.88.2",
