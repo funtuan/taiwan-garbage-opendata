@@ -2,12 +2,12 @@
 require('dotenv').config()
 const Cron = require('croner')
 const simpleGit = require('simple-git')
-const process = require('./process')
+const processFunc = require('./process')
 
 async function run() {
   console.log('running...')
 
-  await process()
+  await processFunc()
 
   if (process.env.PUBLISH) {
     await simpleGit()
@@ -25,4 +25,4 @@ async function run() {
   console.log('done')
 }
 
-Cron('30 44 * * * *', run)
+Cron('21 * * * *', run)
