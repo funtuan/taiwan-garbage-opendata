@@ -13,6 +13,8 @@
 
 [新北市垃圾車清運點位](https://raw.githubusercontent.com/funtuan/taiwan-garbage-opendata/open-data/data/newtaipei.json)
 
+[台南市垃圾車清運點位](https://raw.githubusercontent.com/funtuan/taiwan-garbage-opendata/open-data/data/tainan.json)
+
 ### 更新頻率
 
 6 小時一次

@@ -17,6 +17,7 @@ async function run() {
       .add('./data/*')
       .commit(`open-data: ${Date.now()}`)
       .push(['-f', 'origin', 'open-data'])
+      .checkout('master')
       .catch((err) => console.error('failed: ', err))
 
   console.log('done')
