@@ -15,6 +15,8 @@
 
 [台南市垃圾車清運點位](https://raw.githubusercontent.com/funtuan/taiwan-garbage-opendata/open-data/data/tainan.json)
 
+[高雄市垃圾車清運點位](https://raw.githubusercontent.com/funtuan/taiwan-garbage-opendata/open-data/data/kaohsiung.json)
+
 ### 更新頻率
 
 6 小時一次
