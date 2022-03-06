@@ -21,14 +21,15 @@
 
 | 欄位         | 屬性     | 說明                                     |
 | ------------ | ------- | --------------------------------------- |
-| day          | Number  | 星期，格式同於 new Date().getDay()        |
 | address      | String  | 詳細地址                                 |
 | startTime    | Number  | 預計抵達時間，為從 00:00 計算的分鐘數        |
 | endTime      | Number  | 預計抵達時間，為從 00:00 計算的分鐘數（選填） |
 | lat          | Number  | 緯度                                    |
 | lon          | Number  | 經度                                    |
-| garbage      | Boolean | 是否收一般垃圾                            |
-| recycle      | Boolean | 是否收回收                               |
+| garbageDay   | [Number]| 一般垃圾收運星期                          |
+| recycleDay   | [Number]| 回收收運星期                              |
+
+星期的格式為 0~6 ，同於 new Date().getDay()
 
 ### 注意
 

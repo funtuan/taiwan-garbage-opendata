@@ -41,22 +41,15 @@ module.exports = async () => {
   // console.log('json', json)
 
   const data = json.reduce((row, one) => {
-    for (let day = 0; day < 7; day++) {
-      const garbage = one[garbageKeyDay[day]] === 'Y'
-      const recycle = one[recycleKeyDay[day]] === 'Y'
-      if (garbage || recycle) {
-        row.push({
-          day,
-          address: `新北市${one['city']}${one['name']}`,
-          startTime: parseTimeText(one['time']),
-          endTime: null,
-          lat: Number(one['latitude']),
-          lon: Number(one['longitude']),
-          garbage,
-          recycle,
-        })
-      }
-    }
+    row.push({
+      address: `新北市${one['city']}${one['name']}`,
+      startTime: parseTimeText(one['time']),
+      endTime: null,
+      lat: Number(one['latitude']),
+      lon: Number(one['longitude']),
+      garbageDay: [...Array(7).keys()].filter((day) => one[garbageKeyDay[day]] === 'Y'),
+      recycleDay: [...Array(7).keys()].filter((day) => one[recycleKeyDay[day]] === 'Y'),
+    })
     return row
   }, [])
   // console.log('data', data)

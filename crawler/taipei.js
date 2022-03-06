@@ -17,18 +17,15 @@ module.exports = async () => {
   })
 
   const data = json.reduce((row, one) => {
-    for (const day of taipeiGeneralGarbageDay) {
-      row.push({
-        day,
-        address: one['地點'],
-        startTime: parseTimeText(one['抵達時間']),
-        endTime: parseTimeText(one['離開時間']),
-        lat: Number(one['緯度']),
-        lon: Number(one['經度']),
-        garbage: true,
-        recycle: taipeiRecycleGarbageDay.includes(day),
-      })
-    }
+    row.push({
+      address: one['地點'],
+      startTime: parseTimeText(one['抵達時間']),
+      endTime: parseTimeText(one['離開時間']),
+      lat: Number(one['緯度']),
+      lon: Number(one['經度']),
+      garbageDay: taipeiGeneralGarbageDay,
+      recycleDay: taipeiRecycleGarbageDay,
+    })
     return row
   }, [])
 
