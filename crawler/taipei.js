@@ -21,8 +21,9 @@ module.exports = async () => {
       address: one['地點'],
       startTime: parseTimeText(one['抵達時間']),
       endTime: parseTimeText(one['離開時間']),
-      lat: Number(one['緯度']),
-      lon: Number(one['經度']),
+      // 台北經度緯度數據顛倒
+      lat: Number(one['經度']),
+      lon: Number(one['緯度']),
       garbageDay: taipeiGeneralGarbageDay,
       recycleDay: taipeiRecycleGarbageDay,
     })
